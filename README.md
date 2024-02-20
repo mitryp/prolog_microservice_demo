@@ -22,7 +22,7 @@ This is a demonstration of a microservices architecture using Docker Compose wit
 
 ```bash
 git clone https://github.com/mitryp/prolog_microservice_demo.git
-cd microservices-demo
+cd prolog_microservice_demo
 ```
 
 2. Build and run the Docker containers:
