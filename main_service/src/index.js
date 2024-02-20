@@ -1,3 +1,5 @@
+// © Dmytro Popov
+
 import { AdvicesInterface } from "./advices.js";
 import { buildConfig } from './config.js';
 import express from 'express';
