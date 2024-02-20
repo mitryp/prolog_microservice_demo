@@ -1,0 +1,23 @@
+# prolog_advice_service
+# prolog_advice_service_main
+
+services:
+  main:
+    build: ./main_service
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - ADVICE_SERVICE_HOST=advice_service
+      - ADVICE_SERVICE_PORT=8001
+    ports:
+      - "8000:8000"
+    depends_on:
+      - advice_service
+    restart: on-failure
+  
+  advice_service:
+    build: ./advice_service
+    environment:
+      - HOST=0.0.0.0
+    restart: unless-stopped
+

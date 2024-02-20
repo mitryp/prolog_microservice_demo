@@ -1,0 +1,17 @@
+{
+  "name": "main_service",
+  "version": "1.0.0",
+  "description": "A main backend service of a Prolog-based microservice demo",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "author": "Dmytro Popov",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  },
+  "type": "module"
+}
