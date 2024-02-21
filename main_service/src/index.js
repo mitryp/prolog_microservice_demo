@@ -1,4 +1,4 @@
-import { AdvicesInterface } from "./advices.js";
+import { AdviceInterface } from "./advice.js";
 import { buildConfig } from './config.js';
 import express from 'express';
 
@@ -8,13 +8,13 @@ function bootstrap() {
     const app = express();
     app.use(express.json());
 
-    const advicesInterface = new AdvicesInterface(
+    const adviceInterface = new AdviceInterface(
         `http://${adviceServiceHost}:${adviceServicePort}`
     );
 
     app.get(
         '/options',
-        (_, res) => advicesInterface.getOptions()
+        (_, res) => adviceInterface.getOptions()
             .then((options) => res.json(options))
     );
 
@@ -36,7 +36,7 @@ function bootstrap() {
                 return;
             }
 
-            const { professions } = await advicesInterface.getAdvice(userInfo);
+            const { professions } = await adviceInterface.getAdvice(userInfo);
 
             res.json({
                 suggestions: professions,
